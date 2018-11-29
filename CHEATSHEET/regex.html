@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Regex html</title>
+	<link rel="stylesheet" type="text/css" href="./mystyle.css">
+</head>
+<script>
+	//exam 13/14
+	function checkName1314(text,ele){
+		const regex = /^[A-Za-z\s\-]{1,20}$/;
+		changeColor(regex,text,ele);
+	}
+	function checkPhoneNumber1314(text,ele){
+		const regex = /^[89][0-9]{7}$/;
+		changeColor(regex,text,ele);
+	}
+	function checkPostalCode1314(text,ele){
+		const regex = /^[0-9]{6}$/;
+		changeColor(regex,text,ele);
+	}
+
+	//exam 14/15
+	function checkName1415(text,ele){
+		const regex = /^[A-Z]+[A-Za-z\s\.\-]*$/;
+		changeColor(regex,text,ele);
+	}
+	function checkEmail1415(text,ele){
+		const regex = /^[\w\.\-]+@([\w]+\.)+([A-Za-z]{2,4})$/;
+		changeColor(regex,text,ele);
+	}
+	function checkPhoneNumber1415(text,ele){
+		const regex = /^[689][0-9]{7}$/;
+		changeColor(regex,text,ele);
+	}
+	function checkPasscode1415(text,ele){
+		const regex = /^[0-9]{6}$/;
+		changeColor(regex,text,ele);
+	}
+	//exam 15/16
+	function checkName1516(text,ele){
+		const regex = /^([A-Za-z])[A-Za-z\-]*([A-Za-z])$/;
+		changeColor(regex,text,ele);
+	}
+	function checkMatNumber1516(text,ele){
+		const regex = /^([A-Za-z]{2,3})[0-9]{7}([A-Za-z])$/;
+		changeColor(regex,text,ele);
+	}
+	function checkPhoneNumber1516(text,ele){
+		const regex = /^(\+\(65\))?([689])[0-9]{7}$/;
+		changeColor(regex,text,ele);
+	}
+	//exam 16/17
+	function checkPIDN1617(text,ele){
+		const regex = /^[A-Z][0-9]{7}[A-Z]$/;
+		changeColor(regex,text,ele);
+	}
+	function checkPhoneNumber1617(text,ele){
+		const regex = /^(([0-9]{8})|([0-9]{4}\-[0-9]{4}))$/;
+		changeColor(regex,text,ele);
+	}
+	function checkEmail1617(text,ele){
+		const regex = /^([\w\.\-](?![\.\-]{2,}))+@([\w]+\.)+[A-Za-z]{2,4}$/;
+		changeColor(regex,text,ele);
+	}
+	//exam 17/18
+	function checkUID1718(text,ele){
+		const regex = /^[A-Za-z][\w\.\-\s]*[\w]$/;
+		changeColor(regex,text,ele);
+	}
+	function checkPassword1718(text,ele){
+		const regex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[\W])(?=.{10,})/;
+		//Limit 10 characters!
+		changeColor(regex,text,ele);
+	}
+	function changeColor(regex,text,ele){
+		if(regex.test(text)){
+			ele.style.color='green';
+		}else{
+			ele.style.color='red';
+		}
+	}
+
+
+</script>
+<body>
+	<h2>Form validation! (All past years paper)</h2>
+	Password:<input type="text" name="" onkeyup="checkPassword1718(this.value,this)">
+</body>
+</html>
